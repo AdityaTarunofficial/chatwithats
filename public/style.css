@@ -1,81 +1,109 @@
 /* Global Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Chat Section */
+  .chat-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     padding: 20px;
-}
-
-/* Chat Container */
-.chat-container {
+  }
+  
+  .chat-container {
     max-width: 600px;
-    margin: auto;
-    background: #fff;
+    width: 100%;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-}
-
-/* Chat Box */
-.chat-box {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-container h2 {
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    margin: 0;
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+  
+  .chat-box {
+    flex-grow: 1;
     height: 400px;
     padding: 20px;
     overflow-y: auto;
     border-bottom: 1px solid #ddd;
-}
-
-/* Message Styles */
-#messages {
+    background-color: #f9f9f9;
+  }
+  
+  #messages {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-#messages p {
+  }
+  
+  #messages p {
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
-}
-
-#messages p strong {
+    background-color: #f1f1f1;
+  }
+  
+  #messages p strong {
     display: block;
-}
-
-strong {
+  }
+  
+  strong {
     color: #007bff;
-}
-
-/* User Message */
-#messages p strong + span {
-    background-color: #d4edda; /* Light green */
+  }
+  
+  /* User Message */
+  #messages p strong + span {
+    background-color: #d4edda;
     color: #155724;
-}
-
-/* Bot Message */
-#messages p strong + span {
-    background-color: #f8d7da; /* Light red */
+  }
+  
+  /* Bot Message */
+  #messages p strong + span {
+    background-color: #f8d7da;
     color: #721c24;
-}
-
-/* Form Styles */
-form {
+  }
+  
+  /* Form Styles */
+  form {
     display: flex;
-    padding: 10px;
+    padding: 15px;
     background-color: #fff;
-}
-
-/* Input Field */
-input[type='text'] {
+    border-top: 1px solid #ddd;
+  }
+  
+  input[type='text'] {
     flex: 1;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     margin-right: 10px;
     font-size: 16px;
-}
-
-/* Button Styles */
-button {
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  input[type='text']:focus {
+    border-color: #007bff;
+  }
+  
+  button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -84,8 +112,9 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3; /* Darker blue */
-}
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

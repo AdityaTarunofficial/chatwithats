@@ -1,15 +1,38 @@
-html
+doctype html
+html(lang="en")
   head
-    title Chatbot Interface
-    link(rel='stylesheet', href='/style.css')
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Modern Chatbot Interface
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/style.css")
   body
-    h1 Chat with Our Bot!
-    .chat-container
-      .chat-box
-        p#messages
-      form#chatForm(action='/api/chatbot/message', method='post')
-        input(type='text', name='message', id='userMessage', placeholder='Type your message here…')
-        button(type='submit') Send
+    // Navbar using Bootstrap
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+      .container
+        a.navbar-brand(href="#") Chatbot
+        button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarNav
+          ul.navbar-nav.ms-auto
+            li.nav-item
+              a.nav-link.active(href="#") Home
+            li.nav-item
+              a.nav-link(href="#") Features
+            li.nav-item
+              a.nav-link(href="#") Contact
+
+    // Chat Section
+    section.chat-section
+      .chat-container
+        h2 Chat with ATS Bot!
+        .chat-box
+          div#messages
+        form#chatForm(action="/api/chatbot/message", method="post")
+          input(type="text", name="message", id="userMessage", placeholder="Type your message here…" autocomplete="off")
+          button(type="submit") Send
+
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js")
     script.
       // JavaScript for handling chat interactions
       document.querySelector("#chatForm").addEventListener("submit", async (e) => {
@@ -25,5 +48,6 @@ html
           document.querySelector("#messages").innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
           document.querySelector("#messages").innerHTML += `<p><strong>Bot:</strong> ${data.message}</p>`;
           document.querySelector("#userMessage").value = '';
+          document.querySelector(".chat-box").scrollTop = document.querySelector(".chat-box").scrollHeight;
         }
       });
