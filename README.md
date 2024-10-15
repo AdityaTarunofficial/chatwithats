@@ -75,4 +75,4 @@ The bot is programmed to respond to certain key phrases:
 ## Screenshots
 
 ### Home Page
-![Homepage](./Homepage.png)
+![Homepage](./Homepagee.png)
